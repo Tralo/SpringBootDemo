@@ -7,11 +7,10 @@ import org.springframework.core.type.AnnotatedTypeMetadata
 
 class MagicCondition :Condition {
     override fun matches(context: ConditionContext, metadata: AnnotatedTypeMetadata): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-
         val env = context.environment
         if (env.containsProperty("magic")){
             val b = env["magic"]
+            println("b的值为: " + b)
             return b == "true"
         }
 
